@@ -11,6 +11,10 @@ from django.shortcuts import render
 def req1(request):
     return render(request, 'myapp/base.html')
 
+def req2(request):
+    return render(request, 'myapp/designs.html')
+
+
 
 
       

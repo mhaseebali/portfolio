@@ -19,7 +19,7 @@
     />
     <!-- <link rel="stylesheet" href="style2.css" /> -->
     {% block css_files %}
-    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/style1.css' %}">
     {% endblock %}
     <title>Nathan's Portfolio</title>
   </head>
@@ -46,7 +46,7 @@
               <a href="#questions" class="nav-link">questions</a>
             </li>
             <li class="nav-item">
-              <a href="#Designs" class="nav-link">Designs</a>
+              <a href="designs" class="nav-link">Designs</a>
             </li>
           </ul>
         </div>
@@ -80,23 +80,23 @@
     </section>
 
     <!--newsletter-->
-    <section class="bg-primary text-light p-5">
+    <section class="bg-secondary text-light p-5">
       <div class="container">
         <div class="d-md-flex justify-content-between align-items-center">
           <h3 class="mb-3 mb-md-0">Sign up for purchasing</h3>
 
-          <div class="input-group mb-3 news-input">
+          <div class="input-group mb-3 news-input"> 
             <input
               type="text"
               class="form-control"
-              placeholder="Enter username"
+              placeholder="contact on discord Nathan.#8203"
             />
             <button
               class="btn btn-dark btn-lg"
               type="button"
               id="button-addon2"
             >
-              Button
+              Submit
             </button>
           </div>
         </div>
@@ -104,45 +104,45 @@
     </section>
 
     <!--boxes-->
-    <section class="p-5">
+    <section id="sec-2" class="p-5">
       <div class="container">
         <div class="row text-center g-4">
           <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="h1 mb-3">
+            <div id="img-1" class="card bg-dark text-light">
+              <div id="txt-1" class="h1 mb-3">
                 <i class="bi bi-laptop"></i>
                 <h3 class="card-title mb-3">Artworks</h3>
                 <p class="card-text">
                   Buy amazing Steam Artworks, either choose one of my premade Designs
-              or opt for a newly made custom design!
+              or opt for a newly made custom design! Contact for details.
                 </p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <a href="designs" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
           <div class="col-md">
-            <div class="card bg-secondary text-light">
-              <div class="h1 mb-3">
+            <div id="img-2" class="card bg-secondary text-light">
+              <div id="txt-2" class="h1 mb-3">
                 <i class="bi bi-laptop"></i>
                 <h3 class="card-title mb-3">Wallpapers</h3>
                 <p class="card-text">
                   Looking for amazing desktop or mobile live wallpapers ? Just like with 
                   artworks, you can choose from my premade designs or opt for a custom one
                 </p>
-                <a href="#" class="btn btn-dark">Read more</a>
+                <a href="designs" class="btn btn-dark">Read more</a>
               </div>
             </div>
           </div>
           <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="h1 mb-3">
+            <div id="img-3" class="card bg-dark text-light">
+              <div id="txt-3" class="h1 mb-3">
                 <i class="bi bi-laptop"></i>
                 <h3 class="card-title mb-3">Websites</h3>
                 <p class="card-text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Maiores, autem.
+                  Looking for a website of your own which fulfills all your business needs?
+                  Then this is the right place for you! Contact for more details.
                 </p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <a href="designs" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
@@ -159,15 +159,12 @@
           </div>
           <div class="col-md p=5">
             <h2>What you'll get</h2>
-            <p class="lead">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
-              quisquam consectetur explicabo laborum numquam pariatur.
+            <p class="lead text-light">
+              Here, you can get pretty much anything you desire! 
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              nemo temporibus velit dolorum quia consequuntur ratione
-              necessitatibus, nihil optio aspernatur. Hic provident alias est
-              cupiditate? Sunt, omnis. Ipsa, laboriosam facere.
+            <p class="text-light">
+              From amazing premade to custom made artworks, live wallpapers, twitch profiles, 
+              discord banners/avatars, websites, or even game development!
             </p>
             <a href="" class="btn btn-light mt-3">
               <i class="bi bi-chevron-right"> </i> Read more
@@ -183,17 +180,14 @@
           <div class="col-md p=5">
             <h2>Order now</h2>
             <p class="lead">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum
-              quisquam consectetur explicabo laborum numquam pariatur.
+              Are you interested in ordering something ?
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              nemo temporibus velit dolorum quia consequuntur ratione
-              necessitatibus, nihil optio aspernatur. Hic provident alias est
-              cupiditate? Sunt, omnis. Ipsa, laboriosam facere.
+              Feel free to reach out to me on any of my given social media accounts, and I'll
+              surely get back to you as soon as I can!
             </p>
-            <a href="" class="btn btn-light mt-3">
-              <i class="bi bi-chevron-right"> </i> Read more
+            <a href="#questions" class="btn btn-light mt-3" >
+              <i class="bi bi-chevron-right" > </i> Read more
             </a>
           </div>
           <div class="col-md">
@@ -212,6 +206,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button
+                id="button-info"
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -236,6 +231,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button
+                id="button-info"
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -260,6 +256,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
               <button
+                id="button-info"
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -293,7 +290,9 @@
                     <h2 class="text-center-mb-4">Contact Info</h2>
                     <ul class="list-group list-group-flush lead">
                         <li class="list-group-item">
-                            <span class="fw-bold">Email: </span>haseebmlk12@gmail.com
+                            <span class="fw-bold">Discord: </span>Nathan.#8203<br>
+                            <span class="fw-bold">Email: </span>haseebmlk12@gmail.com<br>
+                            <span class="fw-bold">Instagram: </span>instagram.com/nathan_.47<br>
                         </li>
                     </ul>
                 </div>
@@ -304,7 +303,7 @@
     <!--footer-->
     <footer class="p-5 bg-dark text-white text-center position-relative">
         <div class="container">
-            <p class="lead">Copyright &copy: 2022 My Portfolio</p>
+            <p class="lead">Copyright &copy: 2023 Nathan's Portfolio</p>
 
             <a href="" class="position-absolute bottom-0 end-0 p-5">
                 <i class="bi bi-arrow-up-circle h1"></i>
