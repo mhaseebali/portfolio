@@ -129,6 +129,12 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'uploads'
+
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
@@ -136,3 +142,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
