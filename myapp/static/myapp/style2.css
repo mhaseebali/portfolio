@@ -1,34 +1,79 @@
-@media(min-width: 768px) {
-    .news-input{
-        width: 50%;
-    }
-} 
-
 body {
-    background-color: darkslateblue;
-    overflow: hidden;
+    background-image: url(./download.jpg);    
+    background-position-y: -7vh;
+    /* overflow: hidden; */
+}
+#particles-js {
+    /* stay in a constant spot on the page, regardless of scroll */
+    position: fixed;
+    /* fill the entire page */
+    width: 100%;
+    height: 100%;
+    /* remove the space along the edges */ 
+    margin: 0;
+    padding: 0;
+    /* position it to start at the top of the page */
+    top: 0;
+    /* put it behind other content */
+    z-index: -1;
 }
 .con1 {
     display: flex;
     flex-direction: column;
-    height: 59vh;
+    padding-bottom: 240px;
     margin-top: 260px;
     margin-left: 100px;
     font-family: sans-serif;
     letter-spacing: 1px;
 }
-.footer {
-    margin: 0;
+
+/* @media(min-width: 768px) {
+    .con1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}  */
+
+.footer2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .col-md-3 {
     max-width: 450px;
+    
 }
 
 .row {
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
 }
+
+@media only screen and (min-width: 768px) {
+    .row{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        width: 90%;
+        /* overflow: auto; */
+    }
+} 
+
+@media only screen and (min-width: 1000px) {
+    .row{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        width: 100%;
+        /* overflow: auto; */
+    }
+} 
 
 #img-1 {
     max-width: 600px;
