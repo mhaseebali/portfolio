@@ -48,6 +48,16 @@
             <li class="nav-item">
               <a href="designs" class="nav-link">Designs</a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item header__menuItem">
+              <a class="btn btn-light" href="{% url 'logout' %}" class="nav-link">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item header__menuItem">
+              <a class="btn btn-light" href="{% url 'login' %}" class="nav-link">Login/Signup</a>
+            </li>
+            {% endif %}
+
           </ul>
         </div>
       </div>
@@ -68,7 +78,11 @@
               to me that you are getting what you want! So order now and get
               your amazing artworks in no time.
             </p>
-            <button class="btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">Order Now</button>
+            <!-- <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            {{form.as_p}} -->
+           <a href="designs"><button class="btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enroll">Order Now</button></a>
+            <!-- </form> -->
           </div>
           <img
             class="img-fluid w-50 d-none d-sm-block"
@@ -313,7 +327,7 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -355,7 +369,7 @@
             </div>
             </div>
         </div>
-        </div>
+        </div> -->
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

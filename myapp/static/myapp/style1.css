@@ -10,13 +10,16 @@
 body {
     background-color: darkslateblue;
 }
+
 #button-info {
     background-color: grey;
 }
 .list-group-item {
     background-color: grey;
 }
-
+#navitems{
+    padding: 30px;
+}
 #img-1 {
     background-image: url("./2.png");
     background-size: 120%;

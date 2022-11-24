@@ -1,0 +1,116 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'myapp/styles-loginpage.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'app.css' %}"> -->
+{% endblock %}
+
+{% block content %}
+
+<div id="particles-js"></div>
+
+{% if page == 'register' %}
+
+<div class="container auth">
+    <div class="card">
+      <div class="auth__header text-center">
+        <a href="/">
+          <img class="icon1" src="{% static 'images/icon.svg' %}" alt="icon" />
+        </a>
+        <h3>Sign up</h3>
+        <p>Create a new account</p>
+      </div>
+
+      <form action="{% url 'register' %}" method="POST" class="form auth__form">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        {% for field in form %}
+        <div class="form__field form-control">
+            <label for="formInput#text">{{field.label}}</label>
+            {{field}}
+          </div>
+        {% endfor %}
+
+
+
+        <div class="auth__actions">
+          <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
+        </div>
+      </form>
+      <div class="auth__alternative">
+        <p>Already have an Account?</p>
+        <a href="{% url 'login' %}">Log In</a>
+      </div>
+    </div>
+  </div>
+
+
+{% else %}
+
+<!-- <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Enter password">
+    <input type="submit" value="Login">
+
+    <p>Don't have an account ? <a href="{% url 'register' %}">Sign up</a></p>
+</form> -->
+
+<div class="container auth">
+    <div class="card">
+      <div class="auth__header text-center">
+        <a href="/">
+          <img class="icon1" src="{% static 'images/icon.svg' %}" alt="icon" />
+        </a>
+        <h1>Please Login</h1>
+        <!-- <p>Hello Developer, Welcome Back!</p> -->
+      </div>
+
+      <form action="{% url 'login' %}" method="POST" class="form auth__form">
+        {% csrf_token %}
+        <!-- Input:Email -->
+        <div class="form-control">
+          <input
+            class="input input--text"
+            id="formInput#text"
+            type="text"
+            name="username"
+            placeholder="Enter your username..."
+          />
+          <label for="formInput#text">Username </label>
+
+        </div>
+
+        <!-- Input:Password -->
+        <div class="form-control">
+          <input
+            class="input input--password"
+            id="formInput#passowrd"
+            type="password"
+            name="password"
+            placeholder="••••••••"
+          />
+          <label for="formInput#password">Password </label>
+
+        </div>
+        <!-- <div class="auth__actions">
+          <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+          <a href="forgetpassword.html">Forget Password?</a>
+        </div> -->
+        
+        <button class="btn">Login</button>
+        
+      </form>
+      <div class="auth__alternative">
+        <p class="text">Don’t have an Account? <a href="{% url 'register' %}">Register</a></p>
+      </div>
+    </div>
+  </div>
+
+
+{% endif %}
+<script src="{% static 'myapp/particles.js' %}"></script>
+<script src="{% static 'myapp/app.js' %}"></script>
+{% endblock content %}
