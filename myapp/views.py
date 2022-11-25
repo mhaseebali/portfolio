@@ -52,12 +52,12 @@ def logOutUser(request):
 
 def registerUser(request):
     page = 'register'
-    form = CustomUserCreationForm()
+    form1 = CustomUserCreationForm()
 
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
+        form1 = CustomUserCreationForm(request.POST)
+        if form1.is_valid():
+            user = form1.save(commit=False)
             user.username = user.username.lower()
             user.save()
 
@@ -69,7 +69,7 @@ def registerUser(request):
         else:
             messages.success(request, 'An error was occurred during registration')
 
-    context = {'page': page, 'form': form}
+    context = {'page': page, 'form': form1}
     return render(request, 'myapp/login_register.html', context)
 
 
