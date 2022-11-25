@@ -13,7 +13,7 @@ import dj_database_url
 import os
 from django.test.runner import DiscoverRunner
 from pathlib import Path
-from pathlib import Path
+
 
 # import django_heroku
 
@@ -31,8 +31,8 @@ SECRET_KEY = 'django-insecure-+bsrd+y1$9^^#mp2$zi^f$fwk0fqnqdo031nhlvt7a7i(s5v7f
 
 DEBUG = False
 
-# if 'SECRET_KEY' in os.environ:
-#     SECRET_KEY = os.environ["SECRET_KEY"]
+if 'SECRET_KEY' in os.environ:
+    SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -107,14 +107,14 @@ DATABASES = {
     }
 }
 
-if "DATABASE_URL" in os.environ:
-    # Configure Django for DATABASE_URL environment variable.
-    DATABASES["default"] = dj_database_url.config(
-        conn_max_age=MAX_CONN_AGE, ssl_require=True)
+# if "DATABASE_URL" in os.environ:
+#     # Configure Django for DATABASE_URL environment variable.
+#     DATABASES["default"] = dj_database_url.config(
+#         conn_max_age=MAX_CONN_AGE, ssl_require=True)
 
-    # Enable test database if found in CI environment.
-    if "CI" in os.environ:
-        DATABASES["default"]["TEST"] = DATABASES["default"]
+#     # Enable test database if found in CI environment.
+#     if "CI" in os.environ:
+#         DATABASES["default"]["TEST"] = DATABASES["default"]
 
 
 
@@ -160,6 +160,8 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
