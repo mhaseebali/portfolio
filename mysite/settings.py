@@ -11,15 +11,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 # import dj_database_url
 import os
-from django.test.runner import DiscoverRunner
-from pathlib import Path
+# from django.test.runner import DiscoverRunner
+# from pathlib import Path
 
 
 # import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # IS_HEROKU = "DYNO" in os.environ
 
@@ -42,7 +43,7 @@ DEBUG = False
 # DEBUG = True
 
 # if IS_HEROKU:
-ALLOWED_HOSTS = ['127.0.0.1','nathandesigns3.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','nathandesigns.herokuapp.com']
 # else:
 #     ALLOWED_HOSTS = []
 
@@ -103,23 +104,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # MAX_CONN_AGE = 600
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'deseesjmmcg3vf',
-        'USER': 'jkglxlqtibevrv',
-        'PASSWORD': '96f70eeef934e1f802b9b9957dc63706cf4ff916cb13dd3d6f18d9328a5ff596',
-        'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
-        "PORT": '5432'
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'deseesjmmcg3vf',
+#         'USER': 'jkglxlqtibevrv',
+#         'PASSWORD': '96f70eeef934e1f802b9b9957dc63706cf4ff916cb13dd3d6f18d9328a5ff596',
+#         'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
+#         "PORT": '5432'
+#     }
+# }
 
 # if "DATABASE_URL" in os.environ:
 #     # Configure Django for DATABASE_URL environment variable.
