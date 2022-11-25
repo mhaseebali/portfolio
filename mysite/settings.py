@@ -101,9 +101,12 @@ MAX_CONN_AGE = 600
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'deseesjmmcg3vf',
+        'USER': 'jkglxlqtibevrv',
+        'PASSWORD': '96f70eeef934e1f802b9b9957dc63706cf4ff916cb13dd3d6f18d9328a5ff596',
+        'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
+        "PORT": '5432'
     }
 }
 
@@ -152,6 +155,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

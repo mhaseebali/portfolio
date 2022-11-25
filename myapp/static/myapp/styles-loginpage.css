@@ -38,11 +38,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
 }
-
-
 
 .icon1{
     position: relative;
@@ -61,6 +59,7 @@ body {
     /* left: 50%;
     transform: translateX(-50%); */
 }
+
 
 .container h1 {
     text-align: center;
