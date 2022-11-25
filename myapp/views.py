@@ -19,7 +19,7 @@ def loginUser(request):
     page = 'login'
 
     if request.user.is_authenticated:
-        return redirect('../')
+        return redirect('home')
 
 
 
@@ -32,11 +32,11 @@ def loginUser(request):
         except:
             messages.error(request, 'user does not exist')
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username=username, password=password)
 
         if user is not None:
             login(request, user)
-            return redirect('../')
+            return redirect('home')
         else:
             messages.error(request, 'username or password is incorrect')
 
@@ -64,7 +64,7 @@ def registerUser(request):
             messages.success(request, 'User account was created!')
 
             login(request, user)
-            return redirect('../')
+            return redirect('home')
         
         else:
             messages.success(request, 'An error was occurred during registration')
