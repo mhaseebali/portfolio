@@ -103,32 +103,32 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 MAX_CONN_AGE = 600
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
-    }
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'deseesjmmcg3vf',
-#         'USER': 'jkglxlqtibevrv',
-#         'PASSWORD': '96f70eeef934e1f802b9b9957dc63706cf4ff916cb13dd3d6f18d9328a5ff596',
-#         'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
-#         "PORT": '5432'
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
 #     }
 # }
 
-if "DATABASE_URL" in os.environ:
-    # Configure Django for DATABASE_URL environment variable.
-    DATABASES["default"] = dj_database_url.config(
-        conn_max_age=MAX_CONN_AGE, ssl_require=True)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'deseesjmmcg3vf',
+        'USER': 'jkglxlqtibevrv',
+        'PASSWORD': '96f70eeef934e1f802b9b9957dc63706cf4ff916cb13dd3d6f18d9328a5ff596',
+        'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
+        "PORT": '5432'
+    }
+}
 
-    # Enable test database if found in CI environment.
-    if "CI" in os.environ:
-        DATABASES["default"]["TEST"] = DATABASES["default"]
+# if "DATABASE_URL" in os.environ:
+#     # Configure Django for DATABASE_URL environment variable.
+#     DATABASES["default"] = dj_database_url.config(
+#         conn_max_age=MAX_CONN_AGE, ssl_require=True)
+
+#     # Enable test database if found in CI environment.
+#     if "CI" in os.environ:
+#         DATABASES["default"]["TEST"] = DATABASES["default"]
 
 
 
