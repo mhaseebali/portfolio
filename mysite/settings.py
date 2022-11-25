@@ -12,15 +12,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # import dj_database_url
 import os
 # from django.test.runner import DiscoverRunner
-# from pathlib import Path
+from pathlib import Path
 
 
 # import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # IS_HEROKU = "DYNO" in os.environ
 
@@ -166,7 +166,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 STATIC_URL = 'static/'
@@ -174,7 +174,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    # BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static')
 ]
 
 
@@ -185,12 +186,12 @@ STATICFILES_DIRS = [
 
 
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # class HerokuDiscoverRunner(DiscoverRunner):
 #     """Test Runner for Heroku CI, which provides a database for you.
