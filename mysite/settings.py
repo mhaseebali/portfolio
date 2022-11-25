@@ -165,7 +165,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 STATIC_URL = 'static/'
@@ -191,16 +191,16 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 
-class HerokuDiscoverRunner(DiscoverRunner):
-    """Test Runner for Heroku CI, which provides a database for you.
-    This requires you to set the TEST database (done for you by settings().)"""
+# class HerokuDiscoverRunner(DiscoverRunner):
+#     """Test Runner for Heroku CI, which provides a database for you.
+#     This requires you to set the TEST database (done for you by settings().)"""
 
-    def setup_databases(self, **kwargs):
-        self.keepdb = True
-        return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
+#     def setup_databases(self, **kwargs):
+#         self.keepdb = True
+#         return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
 
-if "CI" in os.environ:
-    TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
+# if "CI" in os.environ:
+#     TEST_RUNNER = "gettingstarted.settings.HerokuDiscoverRunner"
 
 
 
