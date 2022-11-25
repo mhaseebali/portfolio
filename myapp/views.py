@@ -27,10 +27,10 @@ def loginUser(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        try:
-            user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'user does not exist')
+        # try:
+        #     user = User.objects.get(username=username)
+        # except:
+        #     messages.error(request, 'user does not exist')
 
         user = authenticate(username=username, password=password)
 
