@@ -43,7 +43,7 @@ DEBUG = False
 # DEBUG = True
 
 # if IS_HEROKU:
-ALLOWED_HOSTS = ['127.0.0.1','nathandesigns.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','Nathandesigns.up.railway.app']
 # else:
 #     ALLOWED_HOSTS = []
 
