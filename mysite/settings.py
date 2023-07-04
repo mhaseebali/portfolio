@@ -43,7 +43,7 @@ DEBUG = False
 # DEBUG = True
 
 # if IS_HEROKU:
-ALLOWED_HOSTS = ['127.0.0.1','Nathandesigns.up.railway.app']
+ALLOWED_HOSTS = ['*']
 # else:
 #     ALLOWED_HOSTS = []
 
@@ -81,7 +81,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            # BASE_DIR / 'templates',
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -218,4 +219,4 @@ LOGOUT_REDIRECT_URL = '/login'
 
 
 
-CSRF_TRUSTED_ORIGINS = ['Nathandesigns.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['Nathandesigns.up.railway.app']
